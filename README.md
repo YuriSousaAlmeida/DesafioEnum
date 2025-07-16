@@ -3,66 +3,65 @@
 ![Java](https://img.shields.io/badge/Java-17%2B-blue)
 ![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-green)
 
-Aplicação Java para gerenciar contratos de trabalhadores e calcular rendimentos mensais baseados em contratos por hora.
+# Worker Contracts Manager 🧾💼
 
-## 📌 Funcionalidades
+Este é um projeto Java simples que simula o registro de um trabalhador, seus contratos de trabalho por hora e calcula sua renda em um mês/ano específico.
 
-- **Gestão de Trabalhadores**:
-  - Cadastrar trabalhadores com nome, nível, salário base e departamento
-  - Três níveis hierárquicos: JUNIOR, PLENO, SÊNIOR
-- **Sistema de Contratos**:
-  - Adicionar múltiplos contratos por hora aos trabalhadores
-  - Cada contrato inclui data, valor por hora e horas trabalhadas
-- **Cálculo de Rendimentos**:
-  - Calcular rendimento mensal incluindo salário base e valores dos contratos
-  - Filtrar contratos por mês e ano específicos
+## 🚀 Objetivo
 
-## 🛠️ Visão Geral das Classes
+Permitir que o usuário:
 
-| Classe | Descrição |
-|--------|-----------|
-| `Department` | Representa um departamento com nome |
-| `HourContract` | Armazena detalhes dos contratos (data, valor/hora, horas) |
-| `Worker` | Classe principal com gestão de contratos |
-| `WorkerLevel` | Enum para níveis hierárquicos dos trabalhadores |
-| `Main` | Interface de console para interação com usuário |
+- Cadastre um departamento
+- Registre os dados de um trabalhador (nome, nível e salário base)
+- Registre múltiplos contratos com valor por hora e duração
+- Calcule a renda total do trabalhador em um determinado mês/ano
 
-## 🚀 Começando
+## 🧱 Estrutura do Projeto
 
-### Pré-requisitos
-- Java JDK 17 ou superior
-- Maven (opcional)
-  
-##📝 Fluxo de Exemplo:
-Informe o nome do departamento: Engenharia
-Informe os dados do trabalhador:
-Nome: João Silva
-Nível (1 - JUNIOR / 2 - MID_LEVEL / 3 - SENIOR): 2
-Salário base: 4000.00
-Quantos contratos para este trabalhador? 2
-Informe os dados do contrato #1:
-Data (DD/MM/AAAA):10/06/2023
-Valor por hora: 60.00
-Duração (horas): 8
-Informe os dados do contrato #2:
-Data (DD/MM/AAAA):20/06/2023
-Valor por hora: 70.00
-Duração (horas): 5
-Informe mês e ano para calcular rendimento (MM/AAAA):
-Mês: 06
-Ano: 2023
-Nome: João Silva
-Departamento: Engenharia
-Rendimento para 6/2023: 4860.00
+- `Main.java`: ponto de entrada da aplicação, responsável pela interação com o usuário via terminal.
+- `Worker.java`: classe que representa um trabalhador.
+- `WorkerLevel.java`: enum que representa o nível do trabalhador (`JUNIOR`, `MID_LEVEL`, `SENIOR`).
+- `Department.java`: representa o departamento em que o trabalhador está alocado.
+- `HourContract.java`: representa um contrato por hora (data, valor/hora e duração).
 
-Department ────┐
-               │
-HourContract ──┼── Worker
-               │
-WorkerLevel ───┘
+## 📥 Entrada Esperada (via terminal)
 
-📜 Licença
-Este projeto está licenciado sob a licença MIT - consulte o arquivo LICENSE para detalhes.
+1. Nome do departamento
+2. Dados do trabalhador:
+   - Nome
+   - Nível (escolhido por código: `1 - JUNIOR`, `2 - MID_LEVEL`, `3 - SENIOR`)
+   - Salário base
+3. Número de contratos
+4. Para cada contrato:
+   - Data (formato `dd/MM/yyyy`)
+   - Valor por hora
+   - Duração em horas
+5. Mês e ano (formato `MM e YYYY`) para calcular a renda total
+
+## 📤 Exemplo de Uso
+
+```text
+Enter department name:
+TI
+Enter worker data:
+Name: João
+Level (1 - JUNIOR / 2 - MID_LEVEL / 3 - SENIOR): 2
+Base salary: 3000.00
+How many contracts to this worker? 2
+Enter contract #1 data:
+Date (DD/MM/YYYY): 15/06/2024
+Value per hour: 50.00
+Duration(hours): 20
+Enter contract #2 data:
+Date (DD/MM/YYYY): 25/06/2024
+Value per hour: 60.00
+Duration(hours): 10
+Enter month and year to calculate income(MM/YYYY):
+Month: 6
+Year: 2024
+Name: João
+Department: TI
+Income for 6/2024: 4300.0
 
 🤝 Como Contribuir
 Contribuições são bem-vindas! Abra uma issue ou envie um pull request.
