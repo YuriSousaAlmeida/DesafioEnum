@@ -55,8 +55,6 @@ Nome: João Silva
 Departamento: Engenharia
 Rendimento para 6/2023: 4860.00
 
-##📊 Diagrama de Classes (Simplificado)
-
 Department ────┐
                │
 HourContract ──┼── Worker
